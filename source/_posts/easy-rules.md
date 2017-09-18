@@ -1,12 +1,11 @@
 ---
-title: easy-rules
+title: java规则引擎之easy rules源码阅读
 date: 2017-09-18 20:40:01
 tags: java-library
 ---
 
-##java规则引擎之easy rules源码阅读
 
-###简介
+### 简介
 
 easy rules是一个简单而强大的java规则引擎，它有以下特性：
 
@@ -18,16 +17,17 @@ easy rules是一个简单而强大的java规则引擎，它有以下特性：
 它主要包括几个主要的类或接口：Rule,RulesEngine,RuleListener,Facts  
 还有几个主要的注解：@Action,@Condition,@Fact,@Priority,@Rule
 
-###实现
+### 实现
 
 使用easy rules有两种方式：
 
 1. 实现Rule接口，并实现其evaluate和execute方法。
 2. 使用@Rule注解修饰POJO
 
-###源码
+### 源码
 
-####Rule.java
+
+#### Rule.java
 ```java
 public interface Rule extends Comparable<Rule> {
 
@@ -62,7 +62,9 @@ public interface Rule extends Comparable<Rule> {
 }
 ```
 由上面代码可以知道：一个规则由名称、描述、优先级三个属性和判断、执行两个方法组成，实现Rule接口，和使用@Rule,@Condition,@Action,@Priority,@Fact注解的效果是一样的。
-####RulesEngine.java
+
+
+#### RulesEngine.java
 ```java
 public interface RulesEngine {
 
@@ -88,7 +90,9 @@ public interface RulesEngine {
 }
 ```
 RulesEngine负责检查和开启规则，同时可以得到规则引擎的参数和规则监听器列表
-####RuleListener.java
+
+
+#### RuleListener.java
 ```java
 public interface RuleListener {
 
@@ -120,6 +124,8 @@ public interface RuleListener {
 }
 ```
 RuleListener在规则执行的4个阶段加上了触发器，可以灵活地控制规则执行结果
+
+
 ####Facts.java
 ```java
 public class Facts implements Iterable<Map.Entry<String, Object>> {
