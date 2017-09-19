@@ -126,7 +126,7 @@ public interface RuleListener {
 RuleListener在规则执行的4个阶段加上了触发器，可以灵活地控制规则执行结果
 
 
-####Facts.java
+#### Facts.java
 ```java
 public class Facts implements Iterable<Map.Entry<String, Object>> {
 
@@ -165,7 +165,7 @@ public class Facts implements Iterable<Map.Entry<String, Object>> {
     ...
 }
 ```
-Facts就是一个hashmap，通过注解@Fact(value)，其中的value是map的key，可以拿到Facts中的value
+Facts就是一个hashmap，通过注解@Fact(String value)，其中的value是map的key，可以拿到Facts中的value
 
 更多请去easy-rules的github：https://github.com/j-easy/easy-rules
 
