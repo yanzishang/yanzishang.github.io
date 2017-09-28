@@ -1,7 +1,8 @@
 ---
 title: java线程启动之start源码阅读
 date: 2017-09-20 20:40:59
-tags: java-thread
+tags: java线程
+categories: java基础
 ---
 
 #### 问题：  
